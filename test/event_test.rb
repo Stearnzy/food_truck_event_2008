@@ -10,8 +10,9 @@ class EventTest < Minitest::Test
     assert_instance_of Event, event
   end
 
-  def test_readable_name
+  def test_readable_attributes
     event = Event.new("South Pearl Street Farmers Market")
     assert_equal "South Pearl Street Farmers Market", event.name
+    assert_equal []
   end
 end
