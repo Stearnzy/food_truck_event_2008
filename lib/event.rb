@@ -58,4 +58,10 @@ class Event
       item.name
     end.sort
   end
+
+  def overstocked_items
+    all_items.find_all do |item|
+      (self.inventories_record(item)[:quantity]) > 50 && (self.inventories_record(item)[:food_trucks].count) > 1
+    end
+  end
 end
